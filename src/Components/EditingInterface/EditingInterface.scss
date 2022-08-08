@@ -1,0 +1,139 @@
+.EditingInterface {
+  padding: 0.5em;
+  min-width: 500px;
+  background-color: #181818;
+
+  input, textarea {
+    color: white;
+    background-color: #121212;
+    border: 1px solid hsl(0 0 19%);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    min-width: 250px;
+    height: 100%;
+  }
+
+  .textTitle {
+    display: block;
+    margin-bottom: 1em;
+    width: 60%;
+    font-weight: lighter;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    input {
+      display: block;
+      padding: 0.5em;
+      width: 100%;
+      height: 65%;
+    }
+  }
+
+  .textBody {
+    display: block;
+    width: 60%;
+    height: 15em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    textarea {
+      display: block;
+      padding: 0.5em;
+      width: 100%;
+      height: 90%;
+      resize: none;
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 60%;
+
+    .radios {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      label {
+        position: relative;
+        margin: 0.5em;
+        padding-left: 1em;
+        cursor: pointer;
+
+        // Дефолтные радиокнопки, вместо них будут кастомные.
+        input {
+          position: initial;
+          width: 0;
+          height: 0;
+          border: none;
+          appearance: none;
+        }
+      }
+
+      // Кастомные радиокнопки.
+      input::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: white;
+        border: 2px solid;
+        border-radius: 50%;
+        content: '';
+        cursor: pointer;
+      }
+
+      // Общие стили для выбранной радиокнопки.
+      label > input:checked::after {
+        background-color: white;
+        background-size: 90%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      // Вид радиокнопок в зависимости от того, к какому состоянию они относятся.
+      label.waiting > input:checked::after {
+        background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 120 120\' fill=\'lightslategray\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'50\'/%3E%3C/svg%3E');
+      }
+
+      label.inProcess > input:checked::after {
+        background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 120 120\' fill=\'cornflowerblue\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'50\'/%3E%3C/svg%3E');
+      }
+
+      label.done > input:checked::after {
+        background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 120 120\' fill=\'%2300c200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'50\'/%3E%3C/svg%3E');
+      }
+
+      .waiting {
+        color: lightslategray;
+      }
+
+      .inProcess {
+        color: cornflowerblue;
+      }
+
+      .done {
+        color: #00c200;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

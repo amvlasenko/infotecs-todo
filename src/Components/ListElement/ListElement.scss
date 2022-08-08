@@ -1,0 +1,58 @@
+// С точки зрения сементики можно вложить кнопки в элементы списка
+// или стилизовать элемент  списка под кнопку, второй вариант мне кажется более удобным,
+// плюс не нужно дополнительно при нажатии на кнопку убирать ее поведение по умолчанию.
+.ListElement {
+  position: relative;
+  padding: 1em;
+  height: 50px;
+  cursor: pointer;
+  overflow: hidden;
+
+  span {
+    display: block;
+    height: 1.2em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.ListElement:hover {
+  background-color: #383838;
+}
+
+.ListElement:active {
+  background-color: #767676;
+}
+
+.current {
+  background-color: #383838;
+}
+
+// Сделано так на случай, если будут добавляться новые состояния, можно будет для них просто прописать цвет.
+.ListElement::after {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  content: '';
+}
+
+.waiting::after {
+  display: block;
+  background-color: lightslategray;
+}
+
+.inProcess::after {
+  display: block;
+  background-color: cornflowerblue;
+}
+
+.done::after {
+  display: block;
+  background-color: #00c200;
+}
+

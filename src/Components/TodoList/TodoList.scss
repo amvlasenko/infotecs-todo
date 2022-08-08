@@ -1,0 +1,68 @@
+.TodoList {
+  background-color: #212121;
+  overflow-y: auto;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    .legendElement {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 0.5em 1em;
+      color: gray;
+    }
+
+    //Сделано так на случай, если будут добавляться новые состояния, можно будет для них просто прописать цвет.
+    div {
+      position: relative;
+      font-size: 0.6em;
+    }
+
+    div::after {
+      position: absolute;
+      top: 0.2em;
+      left: -1em;
+      display: none;
+      width: 0.8em;
+      height: 0.8em;
+      border-radius: 50%;
+      content: '';
+      transform: rotate(45deg);
+    }
+
+    .waiting::after {
+      display: block;
+      background-color: lightslategray;
+    }
+
+    .inProcess::after {
+      display: block;
+      background-color: cornflowerblue;
+    }
+
+    .done::after {
+      display: block;
+      background-color: #00c200;
+    }
+  }
+
+  .CustomButton {
+    margin: 0;
+    padding: 1em;
+    height: 50px;
+    border: none;
+    border-radius: 0;
+  }
+
+  .searchFail, .tasksEmpty {
+    padding: 1em;
+    align-self: center;
+    font-size: 0.9em;
+    text-transform: uppercase;
+  }
+}
+
+

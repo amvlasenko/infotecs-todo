@@ -1,0 +1,71 @@
+.AddTaskModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.5);
+
+  form {
+    position: sticky;
+    top: 120px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1em 2em;
+    width: 500px;
+    max-width: 100vw;
+    min-height: 30vh;
+    background-color: rgb(33 33 33 / 98%);
+    border: 1px solid rgb(255 255 255 / 10%);
+
+    input, textarea {
+      color: white;
+      background-color: #121212;
+      border: 1px solid hsl(0 0 19%);
+    }
+
+    .textTitle {
+      display: block;
+      margin-bottom: 1em;
+      font-weight: lighter;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      input {
+        display: block;
+        padding: 0.5em;
+        width: 100%;
+        height: 65%;
+      }
+    }
+
+    .textBody {
+      display: block;
+      height: 15em;
+      font-weight: lighter;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      textarea {
+        display: block;
+        padding: 0.5em;
+        width: 100%;
+        height: 90%;
+        resize: none;
+      }
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
