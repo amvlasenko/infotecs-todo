@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/infotecs-todo/static/css/main.bc4c4eb5.css",
+    "main.js": "/infotecs-todo/static/js/main.2cd21fd2.js",
+    "index.html": "/infotecs-todo/index.html",
+    "main.bc4c4eb5.css.map": "/infotecs-todo/static/css/main.bc4c4eb5.css.map",
+    "main.2cd21fd2.js.map": "/infotecs-todo/static/js/main.2cd21fd2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc4c4eb5.css",
+    "static/js/main.2cd21fd2.js"
+  ]
+}
